@@ -1,0 +1,1 @@
+[02-Jan-2015 23:49:39 UTC] PHP Fatal error:  Call to a member function add_action() on a non-object in /home/indoweb/public_html/mlm/modul/account/init.php on line 5

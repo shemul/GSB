@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS `paypal_invoice`;
+DROP TABLE IF EXISTS `invoice`;
+CREATE TABLE `invoice` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `invoice_id` varchar(200) NOT NULL,
+  `status` int(11) NOT NULL COMMENT '1 COMPLETED 0 PENDING',
+  `date` datetime NOT NULL,
+  `buyer` int(11) NOT NULL,
+  `gateway` varchar(11) NOT NULL,
+  `amount` float(255,3) NOT NULL,
+  `notes` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
