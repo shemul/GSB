@@ -5,9 +5,12 @@ header("Content-Type: application/json; charset=UTF-8");
 
 
 $host = 'localhost';
-$user = 'root';
-$pass = 'p@@s';
+$user = 'shemul';
+$pass = '';
 $db = 'gsb';
+
+  
+    
 $mysqli = new mysqli($host,$user,$pass,$db) or die('died'); 
 
 

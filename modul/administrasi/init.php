@@ -61,11 +61,11 @@ function menu_admin() {
         //     "url" => "/invoice",
         //     "icon" => "fa fa-money"
         // ),
-        // array(
-        //     "label" => "Mail Settings",
-        //     "url" => "/mail-setting",
-        //     "icon" => "fa fa-money"
-        // ),
+        array(
+            "label" => "History",
+            "url" => "/history",
+            "icon" => "fa fa-sitemap"
+        ),
         array(
             "label" => "Settings",
             "url" => "#",

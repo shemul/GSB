@@ -1,3 +1,0 @@
-Time : 03:07:30
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',)' at line 1
-Raw SQL : INSERT INTO history(date,total_form,total_free_form ,total_ban_form,bill_for,total_match,total_bill) VALUES(NOW(),84,0,0,,,)

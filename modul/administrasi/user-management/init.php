@@ -11,6 +11,12 @@ function usrmgmt_title() {
     echo "USER MANAGEMENT ";
 }
 
+
+function history_title() {
+    echo "HISTORY ";
+}
+
+
 function usrmgmt_css() {
     ?>
     <link rel="stylesheet" type="text/css" href="/assets/js/bootstrap-datepicker/css/datepicker-custom.css" />
@@ -33,6 +39,21 @@ function usrmgmt_js() {
     <script type="text/javascript" src="/assets/modul-js/admin/usrmgmt.js"></script>
 <?php
 }
+
+function hist_js() {
+    ?>
+    <script type="text/javascript" src="/assets/js/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-daterangepicker/moment.min.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+    <script src="/assets/js/footable/footable.js"></script>
+    <script type="text/javascript" src="/assets/modul-js/admin/history.js"></script>
+<?php
+}
+
+
 function godmode(){
     global $app;
     $app->get('/godmode-off', function(Request $request) {
@@ -58,6 +79,17 @@ function the_usrmgmt() {
         include 'usr.list.php';
         return '';
     });
+    
+    // histoyr
+    
+    $app->post('/history/list', function(Request $request)  {
+        $curpage = $request->get('page');
+        $current_din = $request->get('din');
+        include 'his.list.php';
+        return '';
+    });
+    
+    
     $app->post('/user-management/block', function(Request $request) {
         global $db;
         $uid = $request->get('id');
@@ -162,6 +194,18 @@ function the_usrmgmt() {
         return "";
     });
 
+
+    $app->get('/history', function() {
+        global $hooks;
+        $_SESSION["filterusr"] = "";
+        $hooks->add_action('global_css', "usrmgmt_css");
+        $hooks->add_action('global_js', "hist_js");
+        $hooks->add_action('the_title', "history_title");
+        the_head();
+        include 'hist.tpl.php';
+        the_footer();
+        return "";
+    });
 
 }
 
