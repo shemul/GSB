@@ -130,6 +130,7 @@ if ($cur_page >= 7) {
         $end_loop = $no_of_paginations;
 }
 /* ----------------------------------------------------------------------------------------------------------- */
+/*
 $tbl .= "<div class='col-md-8'><ul class='pagination pagination-lg'>";
 
 // FOR ENABLING THE FIRST BUTTON
@@ -170,4 +171,5 @@ if ($last_btn && $cur_page < $no_of_paginations) {
 }
 //$total_string = "<div class='col-md-4'><span class='total' a='$no_of_paginations'>Page <b>" . $cur_page . "</b> of <b>$no_of_paginations</b></span></div>";
 $tbl = $tbl . "</ul></div>" . $total_string;  // Content for pagination
+*/
 echo $tbl;
