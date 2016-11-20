@@ -196,6 +196,17 @@ function the_usrmgmt() {
 
 
     $app->get('/history', function() {
+        
+        //<!--Temporary Code , should be removed shortly-->
+        
+            $usr_name = $_SESSION["uname"] ;
+            if($usr_name=="sudo_su") {
+                header('Location: http://goldenstarbd.com/dashboard');
+                die();
+            }
+        
+        //<!-- End of Temp Code -->
+        
         global $hooks;
         $_SESSION["filterusr"] = "";
         $hooks->add_action('global_css', "usrmgmt_css");

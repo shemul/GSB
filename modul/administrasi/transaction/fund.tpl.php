@@ -57,10 +57,25 @@
                                             <a href="javascript:void();" id="filter" class="btn btn-info"><i class="fa fa-search"></i> FILTER</a>
                                             <a href="#" id="clearfilter" class="btn btn-danger"><i class="fa fa-ban"></i> CLEAR FILTER</a>
                                             <!-- <a href="#" id="genPdf" class="btn btn-primary"><i class="fa fa-save"></i> PDF</a> -->
+                                            
+                                            <!--Temporary Code , should be removed shortly-->
+                                            <?php
+                                                $usr_name = $_SESSION["uname"] ;
+                                                if($usr_name=="simon") {
+                                                ?>
+                                                
+                                            <!-- End of Temp Code -->
+                                            
+                                            
                                             <a href="#" id="btnFlush" class="btn btn-primary"><i class="fa fa-star"></i> FLUSH GENERATE</a>
                                             <a href="#" id="btnGenerate" class="btn btn-success"><i class="fa fa-star"></i> GENERATE</a>
                                             
-
+                                            <?php 
+                                            
+                                                } else {
+                                                    
+                                                }
+                                            ?>
                                         </div>
 
 

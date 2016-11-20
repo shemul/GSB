@@ -32,7 +32,14 @@
                                         <label for="upline" class="control-label col-lg-2">Upline </label>
                                         <div class="col-lg-10">
                                             
+                                            <!--Temporary Code , should be removed shortly-->
+                                            <?php
+                                                $usr_name = $_SESSION["godmode"]["uname"] ;
+                                                if($usr_name=="simon") {
+                                                    
+                                            ?>
                                             
+                                            <!-- End of Temp Code -->
                                              <select  id='upline' name='upline' class='selectpicker' data-live-search='true'  >
                                                     <?php //echo ($_SESSION["role"]=="0"?"<option value='0'>ADMIN ( NEW NETWORK )</option>":""); ?>
                                                     <?php 
@@ -41,6 +48,25 @@
                                                     ?>
 
                                             </select> 
+                                            
+                                            <?php 
+                                                } else {
+
+                                            ?>
+                                            
+                                            <select disabled  id='upline' name='upline' class='selectpicker' data-live-search='true'  >
+                                                    <?php //echo ($_SESSION["role"]=="0"?"<option value='0'>ADMIN ( NEW NETWORK )</option>":""); ?>
+                                                    <?php 
+                                                        $din = get_parent($_SESSION["uid"], "int");
+                                                        echo availPosition_only_for_edit_upline($din); 
+                                                    ?>
+
+                                            </select>
+                                            
+                                            
+                                            <?php
+                                                }
+                                            ?>
 
 
                                         </div>

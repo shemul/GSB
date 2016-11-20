@@ -36,7 +36,9 @@
      			<h3 class="panel-title">LAST WEEK</h3>
      		</div>
      		<div class="panel-body">
-
+                <a href="/history">View Histories</a>
+                
+                
      		</div>
      	</div>
     </div>      

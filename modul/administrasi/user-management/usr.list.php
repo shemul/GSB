@@ -70,7 +70,40 @@ $tbl .=' <thead>
                                                 </tr>
                                             </thead>
             <tbody id="usr-tbl-content">';
-foreach ($data as $key => $value) {
+            
+    
+// foreach ($data as $key => $value) {
+//     $data = get_data(get_parent($value['uid'], "int"), "uname");
+//     $sponsor = get_sponsor($value['uid'], "uname");
+//     $tbl .= "<tr>"
+//             . "<td>" . $value["uid"] . "</td>"
+//             . "<td>" . $value["uname"] . "</td>"
+//             . "<td>" . date('F d, Y H:i', strtotime($value["register_date"])) . "</td>"
+//             . "<td>" . ($data=="0"?"ROOT":$data) . "</td>"
+//             . "<td>" . ($sponsor=="0"?"ROOT":$sponsor) . "</td>"
+//             . "<td><strong>" . getLastName($value['uid'], 'first_name') . "</strong>"
+//             //. "<br>FAT. NAME : <strong>" . getProfileData($value['uid'], 'fatname') . "</strong>"
+//             //. "<br>DOB : <strong>" . getProfileData($value['uid'], 'dob') . "</strong>"
+//             //. "<br>GENDER <strong>" . getProfileData($value['uid'], 'gender') . "</strong>"
+//             //. "<br>Nominee : <strong>" . getProfileData($value['uid'], 'beneficiary') .'('. getProfileData($value['uid'], 'relation') .')'."</strong>"
+//             . " , " . getProfileData($value['uid'], 'mobile') . ""
+//             //. "<br>FULL ADDRESS : <strong>" . getProfileData($value['uid'], 'address') . "</strong>"
+//             . "</td>"
+//             . "<td>" . getProduct(get_data($value['uid'], "product"), "product_name") . "</td>"
+//             . "<td>" . ($value["new_ban"] != "1" ? "<span class='label label-success'>ITS OKAY!</span>" : "<span class='label label-danger'>BANNED</span>") . "</td>"
+//             . "<td>" . ($value["new_ban"] == "1" ? "<a class='btn btn-info unban' data-id='" . $value['uid'] . "'>UNBLOCK</a>  " : "<a class='btn btn-warning ban' data-id='" . $value["uid"] . "'>BAN USER</a>  ")
+//             ."<a class='btn btn-danger deletemode' data-id='".$value["uid"]."'>DELETE</a>  <a class='btn btn-success godmode' data-id='".$value["uid"]."'>LOGIN AS USER</a>"
+//             . "</td>"
+//             . "</tr>";
+// }
+
+
+
+//<!--Temporary Code , should be removed shortly-->
+
+$usr_name = $_SESSION["uname"] ;
+if($usr_name=="simon") {
+    foreach ($data as $key => $value) {
     $data = get_data(get_parent($value['uid'], "int"), "uname");
     $sponsor = get_sponsor($value['uid'], "uname");
     $tbl .= "<tr>"
@@ -94,6 +127,39 @@ foreach ($data as $key => $value) {
             . "</td>"
             . "</tr>";
 }
+    
+} else {
+foreach ($data as $key => $value) {
+    $data = get_data(get_parent($value['uid'], "int"), "uname");
+    $sponsor = get_sponsor($value['uid'], "uname");
+    $tbl .= "<tr>"
+            . "<td>" . $value["uid"] . "</td>"
+            . "<td>" . $value["uname"] . "</td>"
+            . "<td>" . date('F d, Y H:i', strtotime($value["register_date"])) . "</td>"
+            . "<td>" . ($data=="0"?"ROOT":$data) . "</td>"
+            . "<td>" . ($sponsor=="0"?"ROOT":$sponsor) . "</td>"
+            . "<td><strong>" . getLastName($value['uid'], 'first_name') . "</strong>"
+            //. "<br>FAT. NAME : <strong>" . getProfileData($value['uid'], 'fatname') . "</strong>"
+            //. "<br>DOB : <strong>" . getProfileData($value['uid'], 'dob') . "</strong>"
+            //. "<br>GENDER <strong>" . getProfileData($value['uid'], 'gender') . "</strong>"
+            //. "<br>Nominee : <strong>" . getProfileData($value['uid'], 'beneficiary') .'('. getProfileData($value['uid'], 'relation') .')'."</strong>"
+            . " , " . getProfileData($value['uid'], 'mobile') . ""
+            //. "<br>FULL ADDRESS : <strong>" . getProfileData($value['uid'], 'address') . "</strong>"
+            . "</td>"
+            . "<td>" . getProduct(get_data($value['uid'], "product"), "product_name") . "</td>"
+            . "<td>" . ($value["new_ban"] != "1" ? "<span class='label label-success'>ITS OKAY!</span>" : "<span class='label label-danger'>BANNED</span>") . "</td>"
+            . "<td>" . ($value["new_ban"] == "1" ? "<a class='btn btn-info unban' data-id='" . $value['uid'] . "'>UNBLOCK</a>  " : "<a class='btn btn-warning ban' data-id='" . $value["uid"] . "'>BAN USER</a>  ")
+            ."<a class='btn btn-success godmode' data-id='".$value["uid"]."'>LOGIN AS USER</a>"
+            . "</td>"
+            . "</tr>";
+}
+    
+}
+
+//<!-- End of Temp Code -->End
+
+
+
 
 $tbl .='</tbody></table></div>';
 /* --------------------------------------------- */
